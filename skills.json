@@ -1,0 +1,178 @@
+[
+  {
+    "name": "Java",
+    "icon": "https://img.icons8.com/color/48/java-coffee-cup-logo.png"
+  },
+  {
+    "name": "Python",
+    "icon": "https://img.icons8.com/color/48/python.png"
+  },
+  {
+    "name": "JavaScript",
+    "icon": "https://img.icons8.com/color/48/javascript.png"
+  },
+  {
+    "name": "TypeScript",
+    "icon": "https://img.icons8.com/color/48/typescript.png"
+  },
+  {
+    "name": "C++",
+    "icon": "https://img.icons8.com/color/48/c-plus-plus-logo.png"
+  },
+  {
+    "name": "Spring Boot",
+    "icon": "https://img.icons8.com/color/48/spring-logo.png"
+  },
+  {
+    "name": "REST APIs",
+    "icon": "https://img.icons8.com/external-flaticons-lineal-color-flat-icons/48/external-api-web-development-flaticons-lineal-color-flat-icons.png"
+  },
+  {
+    "name": "Microservices",
+    "icon": "https://img.icons8.com/color/48/services.png"
+  },
+  {
+    "name": "Kafka",
+    "icon": "https://cdn.simpleicons.org/apachekafka"
+  },
+  {
+    "name": "RabbitMQ",
+    "icon": "https://cdn.simpleicons.org/rabbitmq"
+  },
+  {
+    "name": "React.js",
+    "icon": "https://img.icons8.com/color/48/react-native.png"
+  },
+  {
+    "name": "Next.js",
+    "icon": "https://cdn.simpleicons.org/nextdotjs/ffffff"
+  },
+  {
+    "name": "HTML5",
+    "icon": "https://img.icons8.com/color/48/html-5.png"
+  },
+  {
+    "name": "CSS3",
+    "icon": "https://img.icons8.com/color/48/css3.png"
+  },
+  {
+    "name": "AngularJS",
+    "icon": "https://img.icons8.com/color/48/angularjs.png"
+  },
+  {
+    "name": "jQuery",
+    "icon": "https://img.icons8.com/ios-filled/48/1169ae/jquery.png"
+  },
+  {
+    "name": "MySQL",
+    "icon": "https://img.icons8.com/color/48/mysql-logo.png"
+  },
+  {
+    "name": "PostgreSQL",
+    "icon": "https://img.icons8.com/color/48/postgreesql.png"
+  },
+  {
+    "name": "MongoDB",
+    "icon": "https://img.icons8.com/color/48/mongodb.png"
+  },
+  {
+    "name": "DynamoDB",
+    "icon": "https://cdn.simpleicons.org/amazondynamodb"
+  },
+  {
+    "name": "Oracle",
+    "icon": "https://img.icons8.com/color/48/oracle-logo.png"
+  },
+  {
+    "name": "FAISS",
+    "icon": "https://img.icons8.com/color/48/database.png"
+  },
+  {
+    "name": "AWS",
+    "icon": "https://img.icons8.com/color/48/amazon-web-services.png"
+  },
+  {
+    "name": "AWS EC2",
+    "icon": "https://img.icons8.com/color/48/amazon-web-services.png"
+  },
+  {
+    "name": "AWS S3",
+    "icon": "https://img.icons8.com/color/48/amazon-web-services.png"
+  },
+  {
+    "name": "AWS Lambda",
+    "icon": "https://img.icons8.com/color/48/amazon-web-services.png"
+  },
+  {
+    "name": "Docker",
+    "icon": "https://img.icons8.com/color/48/docker.png"
+  },
+  {
+    "name": "Kubernetes",
+    "icon": "https://img.icons8.com/color/48/kubernetes.png"
+  },
+  {
+    "name": "GitHub Actions",
+    "icon": "https://cdn.simpleicons.org/githubactions"
+  },
+  {
+    "name": "CI/CD",
+    "icon": "https://img.icons8.com/color/48/continuous-integration.png"
+  },
+  {
+    "name": "Elasticsearch",
+    "icon": "https://cdn.simpleicons.org/elasticsearch"
+  },
+  {
+    "name": "Large Language Models",
+    "icon": "https://img.icons8.com/color/48/artificial-intelligence.png"
+  },
+  {
+    "name": "OpenAI API",
+    "icon": "https://cdn.simpleicons.org/openai/ffffff"
+  },
+  {
+    "name": "Prompt Engineering",
+    "icon": "https://img.icons8.com/color/48/chatgpt.png"
+  },
+  {
+    "name": "LangChain",
+    "icon": "https://img.icons8.com/color/48/link.png"
+  },
+  {
+    "name": "RAG",
+    "icon": "https://img.icons8.com/color/48/search--v1.png"
+  },
+  {
+    "name": "Hugging Face",
+    "icon": "https://cdn.simpleicons.org/huggingface"
+  },
+  {
+    "name": "Scikit-learn",
+    "icon": "https://cdn.simpleicons.org/scikitlearn"
+  },
+  {
+    "name": "TensorFlow",
+    "icon": "https://img.icons8.com/color/48/tensorflow.png"
+  },
+  {
+    "name": "PyTorch",
+    "icon": "https://cdn.simpleicons.org/pytorch"
+  },
+  {
+    "name": "Pandas",
+    "icon": "https://cdn.simpleicons.org/pandas/ffffff"
+  },
+  {
+    "name": "NumPy",
+    "icon": "https://cdn.simpleicons.org/numpy"
+  },
+  {
+    "name": "Faster-Whisper",
+    "icon": "https://img.icons8.com/color/48/microphone.png"
+  },
+  {
+    "name": "GitHub",
+    "icon": "https://img.icons8.com/glyph-neue/48/ffffff/github.png"
+  }
+]

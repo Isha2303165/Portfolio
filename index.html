@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="Yash Pawar, portfolio, Yash, full stack dev, personal portfolio NeuYash, NeuYash, Yash Portfolio, Northeastern Yash, portfolio design, portfolio website, personal portfolio" />
+    <meta name="description" content="Welcome to Yash's Portfolio. Full-Stack Developer and Web App Developer" /> -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description" content="Portfolio of Isha Pawar, a Software Engineer specializing in Java, Spring Boot, distributed systems, cloud infrastructure, and artificial intelligence." />
+    <meta property="og:title" content="Isha Pawar | Software Engineer" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="YOUR_FINAL_PORTFOLIO_URL" />
+    <meta name="og:description" content="Portfolio of Isha Pawar, a Software Engineer specializing in Java, Spring Boot, distributed systems, cloud infrastructure, and AI." property="og:description" />
+    <meta property="og:image" content="./assets/images/landingpage.png"/>
+    <meta name="keywords" content="Isha Pawar, Software Engineer, Java, Spring Boot, AWS, Distributed Systems, Artificial Intelligence, Machine Learning" />
+    <meta name="author" content="Isha Pawar" />
+    <meta name="application-name" content="Isha's PortFolio" />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Favicon -->
+    <link id='favicon' rel="shortcut icon" href="./assets/images/favicon.png" type="image/x-png">
+    <title>Portfolio | Isha Pawar</title>
+
+    <style>
+      /* Style for the flash ad container */
+      #flashAdContainer {
+        display: none; /* Initially hidden */
+        position: fixed;
+        top: 50%; /* Center vertically */
+        left: 50%; /* Center horizontally */
+        transform: translate(-50%, -50%); /* Center the container */
+        width: 80%; /* 80% of the viewport width */
+        height: 80%;
+        background-color: #f0f0f0;
+        border: 1px solid #ccc;
+        padding: 10px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        border-radius: 15px;
+        z-index: 9999; /* Ensure it appears above other content */
+      }
+      
+      /* Style for the close button */
+  #closeButton {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    cursor: pointer;
+    font-size: 20px;
+    color: #666;
+    font-weight: bold; /* Make the text bold */
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s ease; /* Smooth transition for color change */
+  }
+
+  /* Hover effect */
+  #closeButton:hover {
+    color: black; /* Change text color to black on hover */
+  }
+    </style>
+</head>
+<!-- <body oncontextmenu="return false"> -->
+<body>
+  <script>
+    // Function to show the ad after 3 seconds
+    function showAd() {
+      var flashAdContainer = document.getElementById('flashAdContainer');
+      flashAdContainer.style.display = 'block'; // Show the ad container
+    }
+    
+    // Function to close the ad
+    function closeAd() {
+      var flashAdContainer = document.getElementById('flashAdContainer');
+      flashAdContainer.style.display = 'none'; // Hide the ad container
+    }
+    </script>
+
+    <!-- Flash ad container -->
+  <div id="flashAdContainer">
+  <!-- Close button -->
+  <div id="closeButton" onclick="closeAd()">X</div>
+  
+  <!-- Image to showcase the ad -->
+  <img src="./assets/LatestUpdateImages/15-07-24.png" alt="Advertisement" style="width: 100%; height: 100%;">
+</div>
+
+  <!-- JavaScript to show the ad after 3 seconds -->
+<script>
+    //setTimeout(showAd, 3000);// Show the ad after 3 seconds
+  </script>
+
+<!-- pre loader -->
+<!-- <div class="loader-container">
+  <img draggable="false" src="./assets/images/preloader.gif" alt="">
+</div> -->
+
+<!-- navbar starts -->
+<header>
+        <a href="#home" class="logo"><i class="fab fa-node-js"></i> Isha Pawar</a>
+
+        <div id="menu" class="fas fa-bars"></div>
+        <nav class="navbar">
+            <ul>
+            <li><a class="active" href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#work">Work</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+</header>
+<!-- navbar ends -->
+
+
+<!-- hero section starts -->
+<section class="home" id="home">
+    <div id="particles-js"></div>
+
+    <div class="content">
+    <h2>Hi There,<br/> I'm Isha <span>Pawar</span></h2>
+    <h3>Open to <span>Full-Time Opportunities</span></h3>
+    <br/>
+    <p>I specialize in <span class="typing-text"></span></p>
+    <a href="#about" class="btn"><span>About Me</span>
+      <i class="fas fa-arrow-circle-down"></i>
+    </a>
+    <div class="socials">
+        <ul class="social-icons">
+          <li><a class="linkedin" aria-label="LinkedIn" href="https://linkedin.com/in/ishap23" target="_blank"><i class="fab fa-linkedin"></i></a></li> 
+          <li><a class="github" aria-label="GitHub" href="https://github.com/Isha2303165" target="_blank"><i class="fab fa-github"></i></a></li>
+          <li><a class="leetcode" aria-label="leetcode" href="https://leetcode.com/u/IshaP77/" target="_blank"><img width="24" height="24" src="./assets/images/leetcode.png" alt="leetcode"/></i></a></li>
+          </ul>
+      </div>
+    </div>
+<div class="image">
+    <img draggable="false" class="tilt" src="./assets/images/hero.png" alt="Illustration representing Isha Pawar">
+</div>
+</section>
+<!-- hero section ends -->
+
+
+<!-- about section starts -->
+<section class="about" id="about">
+ 
+    <h2 class="heading"><i class="fas fa-user-alt"></i> About <span>Me</span></h2>
+    
+    <div class="row" >
+    
+    <div class="content">
+        <h3>I'm Isha</h3>
+        <span class="tag">Curious Software Engineer</span>
+        <p>
+           I am a Software Engineer and Master of Science in Computer Science graduate
+          from Purdue University with professional experience in backend development,
+          distributed systems, cloud infrastructure, frontend development, and
+          artificial intelligence.
+        </p>
+        <br><br>
+        <p>
+          At Standard Chartered Bank, I worked on scalable and highly available
+          financial systems using Java, Spring Boot, microservices, AWS, Docker,
+          Kubernetes, Kafka, RabbitMQ, Lambda, and DynamoDB. My work included building
+          backend services, automating deployments, monitoring application releases,
+          improving system reliability, and optimizing cloud infrastructure costs.
+        </p>
+        <br><br>
+        <p>
+        My academic and project experience also includes Large Language Models,
+        Vision-Language Models, prompt engineering, retrieval-augmented generation,
+        natural language processing, and automatic speech recognition. I enjoy
+        solving complex technical problems and building reliable products that
+        combine software engineering, cloud technologies, and AI.
+      </p>
+         <!-- <p>I'm a recent graduate from Northeastern University, and I am deeply enthusiastic about advancing my coding expertise and crafting websites and applications. My specialization lies in creating WebApps and Websites using the MERN Stack, along with deploying applications on AWS cloud infrastructure. I am passionate about developing Full-Stack Applications. 
+          <br><br>
+          I am also proficient in J2EE development and have hands-on experience with SpringBoot for backend development and AngularJS/ReactJS for frontend development. I am known for building RESTful APIs using the Java Spring Framework and GraphQL APIs utilizing ProtoBuf in Go language.
+          <br><br>
+          As an avid learner, I am always eager to explore and adopt new technologies, continuously expanding my skill set to stay ahead in the ever-evolving tech landscape.</p> -->
+        <div class="box-container">
+            <!-- <div class="box">
+              <p><span> age: </span> 20</p>
+              <p><span> phone : </span> +91 XXX-XXX-XXXX</p>
+            </div> -->
+            <div class="box">
+              <p><span> Email : </span><a href="mailto:ishapawar181@gmail.com" target="_blank" style="display: inline; color: black;">
+                <span onmouseover="this.style.color='blue'" onmouseout="this.style.color='black'" style="display: inline; transition: color 0.3s;">
+                ishapawar181@gmail.com</span></a></p>
+                <!-- <p><span> YouTube : </span><a href="https://www.youtube.com/@yashpawar1947" target="_blank" style="display: inline; color: black;">
+                  <span onmouseover="this.style.color='blue'" onmouseout="this.style.color='black'" style="display: inline; transition: color 0.3s;">
+                  yashpawar1947</span></a></p> -->
+              <p><span> Place : </span> <a href="https://maps.app.goo.gl/e4QMyEG2EReAx3wt8" target="_blank" style="display: inline; color: black;">
+                <span onmouseover="this.style.color='blue'" onmouseout="this.style.color='black'" style="display: inline; transition: color 0.3s;">
+                Bellevue, WA-98004</span></a></p>
+            </div>
+        </div>
+        
+        <div class="resumebtn">
+            <a href="./assets/files/Resume/Isha_Pawar_Resume.pdf" target="_blank" class="btn"><span>Resume</span>
+                <i class="fas fa-chevron-right"></i>
+            </a>
+        </div>
+
+        
+    </div>
+    <div class="image">
+      <img draggable="false" class="tilt" src="./assets/images/profileImages/Formal.jpg" alt="profileImage">
+  </div>
+    </div>
+</section>
+<!-- about section ends -->
+
+<!-- skills section starts -->
+<section class="skills" id="skills">
+  
+    <h2 class="heading"><i class="fas fa-laptop-code"></i> Skills & <span>Abilities</span></h2>
+
+    <div class="container">
+          <div class="row" id="skillsContainer">
+
+            <!-- <div class="bar">
+              <div class="info">
+                <img src="https://img.icons8.com/color/48/000000/adobe-xd.png"/>
+                <span>AdobeXD</span>
+              </div>
+            </div> -->
+
+      </div>
+</div>
+</section>
+<!-- skills section ends -->
+
+<!-- Certifications section starts --> -->
+<section class="certifications" id="certifications">
+  <h2 class="heading">
+    <i class="fas fa-certificate"></i>
+    Certifications
+  </h2>
+
+  <div class="box-container">
+    <div class="box">AWS Certified Cloud Practitioner</div>
+    <div class="box">AWS Certified Solutions Architect – Associate</div>
+    <div class="box">Microsoft Azure Fundamentals</div>
+    <div class="box">Microsoft Python Programming</div>
+  </div>
+</section>
+<!-- Certifications section ends --> -->
+
+<!-- education section starts -->
+<section class="education" id="education">
+
+  <h1 class="heading"><i class="fas fa-graduation-cap"></i><span>Education</span></h1>
+
+    <p class="qoute">"Education is the passport to the future, for tomorrow belongs to those who prepare for it today." - Malcolm X.</p>
+
+    <div class="box-container">
+      
+
+      <div class="box">
+        <div class="image">
+        <img draggable="false" src="./assets/images/educat/university.jpeg" alt="Purdue University campus">
+        </div>
+        <div class="content">
+        <h3>Master of Science in Computer Science</h3>
+        <p><a href="https://www.pfw.edu/" target="_blank" style="color: black; transition: color 0.3s;" onmouseover="this.style.color='blue';" onmouseout="this.style.color='black';">Purdue University, IN</a></p>
+        <p>GPA: 4.0</p>
+        <div class="relevant-coursework">
+        
+          <h4>Courses</h4>
+          <ol>
+            <li>Analysis of Algorithms</li>
+            <li>Natural Language Processing</li>
+            <li>Deep Learning</li>
+            <li>Application Development</li>
+            <li>Database Systems</li>
+            <li>Operating Systems</li>
+          </ol>
+        </div>
+        
+        <h4>January 2025 - May 2026 | Graduated</h4>
+        </div>
+    </div>
+
+    <div class="box">
+        <div class="image">
+        <img draggable="false" src="./assets/images/educat/college.jpeg" alt="Sinhgad College of Engineering">
+        </div>
+        <div class="content">
+        <h3>Bachelor of Engineering in Computer Science</h3>
+        <p><a href="http://www.sinhgad.edu/" target="_blank" style="color: black; transition: color 0.3s;" onmouseover="this.style.color='blue';" onmouseout="this.style.color='black';">Sinhgad College of engineering | Solapur University</a></p>
+        <p>GPA: 3.9</p>
+        <div class="relevant-coursework">
+
+          <h4>Courses</h4>
+          <ol>
+            <li>Data Structures and Algorithms</li>
+            <li>Operating Systems</li>
+            <li>System Design paradigm</li>
+            <li>Data Structure</li>
+            <li>Software Development Life Cycle</li>
+          </ol>
+        </div>
+ 
+        <h4>June 2018 - May 2022 | Graduated</h4>
+        </div>
+    </div>
+
+</div>
+</section>
+<!-- education section ends -->
+
+
+<!-- work project section starts -->
+<section class="work" id="work">
+
+  <h2 class="heading"><i class="fas fa-laptop-code"></i> Projects <span>Made</span></h2>
+  
+  <div id="filters" class="button-group">
+    <button class="btn is-checked" data-filter="*">All Projects</button>
+    <button class="btn" data-filter=".AI">AI & Machine Learning</button>
+    <button class="btn" data-filter=".FullStack">Full Stack</button>
+    <button class="btn" data-filter=".Frontend">Frontend</button>
+    <button class="btn" data-filter=".Backend">Backend</button>
+    <button class="btn" data-filter=".Python">Python</button>
+  </div>
+
+  <div class="workbox-container"></div>
+  <!--<div class="viewall">
+    <a href="http://127.0.0.1:5501/Portfolio-Website-main/projects/index.html" class="btn"><span>View All</span>
+      <i class="fas fa-arrow-right"></i>
+  </a>-->
+  <div class="viewall">
+  <a href="./projects/index.html" class="btn">
+    <span>View All</span>
+    <i class="fas fa-arrow-right"></i>
+  </a>
+</div>
+</section>
+<!-- work project section ends -->
+
+<!-- experience section starts -->
+<section class="experience" id="experience">
+
+  <h2 class="heading"><i class="fas fa-briefcase"></i> Experience </h2>
+
+  <div class="timeline">
+
+    
+        <div class="container right extra-info">
+        <div class="content">
+        <div class="tag">
+          <h2>Purdue University</h2>
+        </div>
+
+        <div class="desc">
+          <h3>Research Assistant</h3>
+          <p>Fort Wayne, Indiana, USA</p>
+          <p>October 2025 – May 2026</p>
+        </div>
+        <div class="desc extra-content">
+          <ul>
+            <li>Conducted research on Vision-Language Models by designing prompt-based
+            experiments to evaluate consistency, multimodal alignment, semantic
+            accuracy, and reconstruction quality. Built an image-text-image evaluation
+            workflow to study how AI models interpret and regenerate visual information.</li>
+            <li>Compared model behavior across Gemini, GPT-4V, and LLaVA using different
+              prompt formulations and tuning strategies. Identified reproducibility gaps,
+              semantic fidelity issues, and model-specific failure patterns across
+              multimodal AI outputs.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="container left extra-info">
+      <div class="content">
+        <div class="tag">
+          <h2>Purdue University</h2>
+        </div>
+        <div class="desc">
+            <h3>Teaching Assistant</h3>
+            <p>Fort Wayne, IN, USA</p>
+            <p>August 2025 – May 2026</p>
+        </div>
+        <div class="desc extra-content">
+          <ul>
+            <li>Supported the professor in delivering the undergraduate Capstone Project
+            course and guided students through their semester-long software and research
+            projects. Assisted with project evaluations, prepared course materials, and
+            provided constructive feedback to help students improve their technical
+            implementations, presentations, and documentation.</li>
+            <li>Facilitated project discussions, answered student questions, monitored
+              project progress, and helped teams identify and resolve technical and
+              organizational challenges. Worked closely with students to ensure they
+              remained on schedule and successfully completed their capstone projects.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="container left extra-info">
+      <div class="content">
+        <div class="tag">
+          <h2>Purdue Intramurals</h2>
+        </div>
+        <div class="desc">
+            <h3>Sports Official</h3>
+            <p>Fort Wayne, IN, USA</p>
+            <p>August 2025 - May 2026</p>
+        </div>
+        <div class="desc extra-content">
+          <ul>
+            <li>I have had the privilege of officiating various sports, leading teams, and fostering effective communication with players.</li>
+            <li>This role has not only honed my decision-making skills but also boosted my confidence and determination.</li>
+            <li>Each game is an opportunity for me to contribute to the sports community while continuously enhancing my leadership abilities.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="container left extra-info">
+      <div class="content">
+        <div class="tag">
+          <h2>Purdue University</h2>
+        </div>
+        <div class="desc">
+            <h3>Student Ambassador</h3>
+            <p>Fort Wayne, IN, USA</p>
+            <p>August 2025 – May 2026</p>
+        </div>
+        <div class="desc extra-content">
+          <ul>
+            <li>Represented Purdue University and its student community by supporting student
+            engagement, outreach, and campus initiatives. Helped prospective and current
+            students better understand university programs, academic resources, campus
+            opportunities, and the overall student experience.</li>
+            <li>Participated in student-facing events, communicated student perspectives, and
+              helped create a welcoming environment for students from diverse backgrounds.
+              Served as a connection between students and the university by sharing
+              information, addressing questions, and encouraging involvement in academic
+              and community activities.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="container left extra-info">
+      <div class="content">
+        <div class="tag">
+          <h2>Standard Chartered Bank</h2>
+        </div>
+        <div class="desc">
+            <h3>Software Development Engineer</h3>
+            <p>Bengaluru, Karnataka,India</p>
+            <p>September 2022 - December 2024</p>
+        </div>
+        <div class="desc extra-content">
+          <ul>
+            <li>Designed and developed scalable, highly available backend services for
+            payment-processing systems using Java, Spring Boot, REST APIs, microservices,
+            Docker, and Kubernetes. Contributed to distributed financial applications
+            where reliability, availability, performance, and secure transaction
+            processing were critical.</li>
+            <li>Implemented event-driven workflows using Kafka, RabbitMQ, AWS Lambda, and
+            DynamoDB to support low-latency and asynchronous processing. Built GitHub
+            Actions CI/CD pipelines for automated deployment to AWS EC2, improving
+            deployment reliability, rollback readiness, and development speed.</li>
+            <li>Automated release validation and trend reporting using Alteryx, helping
+              reduce downtime by 25% and release issues by 15%. Developed Python scripts
+              for deployment-log monitoring and anomaly detection, improving operational
+              visibility and identifying release-quality risks.</li>
+            <li>Identified unused AWS resources and implemented S3 lifecycle and expiration
+            policies, contributing to approximately $37K in cloud-cost savings.
+            Participated in code reviews, backend design discussions, production support,
+            and root-cause analysis to improve service maintainability and reliability.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="container right extra-info">
+      <div class="content">
+        <div class="tag">
+          <h2>Persistent Systems</h2>
+        </div>
+        <div class="desc">
+            <h3>Software Engineer Intern</h3>
+            <p>Pune, Maharashtra, India</p>
+            <p>January 2022 - July 2022</p>
+        </div>
+        <div class="desc extra-content">
+          <ul>
+            <li>Diagnosed and resolved application issues through systematic debugging and
+            root-cause analysis, helping improve application performance, efficiency,
+            and system reliability. Collaborated with developers to reproduce defects,
+            analyze their causes, and validate fixes.</li>
+            <li>Worked with SQL-based school datasets and applied indexing, query
+            optimization, and data-cleaning techniques, reducing data redundancy by 17%.
+            Enhanced 12 React components using Redux, Material-UI, and Formik to improve
+            usability, state management, form handling, and frontend maintainability.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+      <div class="container right extra-info">
+      <div class="content">
+        <div class="tag">
+          <h2>Knowledge Solutions</h2>
+        </div>
+        <div class="desc">
+            <h3>Software Engineer Intern</h3>
+            <p>Remote</p>
+            <p>March 2021 - May 2021</p>
+        </div>
+        <div class="desc extra-content">
+          <ul>
+            <li>Contributed to the development of responsive web applications using React.js
+              and Next.js. Integrated application pages with Next.js dynamic routing to
+              provide smooth navigation between different product features and content
+              pages.</li>
+            <li>Improved application loading performance by implementing code splitting and
+            lazy loading, allowing pages and components to load only when required.
+            Worked in a fast-paced and collaborative product-development environment,
+            adapting quickly to changing requirements and contributing to frontend
+            implementation and application improvements.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+   
+    <!-- <div class="container right">
+      <div class="content">
+        <div class="tag">
+          <h2>Simplified Technologies</h2>
+        </div>
+        <div class="desc">
+            <h3>Technical Blog Writer | SEO Intern</h3>
+            <p>Aug 2018 - May 2019</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="container left">
+      <div class="content">
+        <div class="tag">
+          <h2>HackMaynia</h2>
+        </div>
+        <div class="desc">
+            <h3>Contributor | Open Source Program</h3>
+            <p>Jan 2018 - Jul 2018</p>
+        </div>
+      </div>
+    </div>
+  </div> -->
+
+</div>
+
+</section>
+<!-- experience section ends -->
+
+<!-- gallery section starts -->
+<!-- <section class="about" id="gallery">
+ 
+  <h2 class="heading"><i class="fas fa-user-alt"></i> My <span>Gallery</span></h2>
+  
+  <div class="row" >
+    <div class="image">
+      <img draggable="false" class="tilt" src="./assets/images/profileImages/Formal.jpg" alt="profileImage">
+    </div>
+  </div>
+</section> -->
+<!-- gallery section ends -->
+
+<!-- contact section starts -->
+<section class="contact" id="contact">
+  
+  <h2 class="heading"><i class="fas fa-headset"></i> Get in <span>Touch</span></h2>
+
+  <div class="container">
+    <div class="content">
+      <div class="image-box">
+        <img draggable="false" src="./assets/images/contact1.png" alt="Contact Isha Pawar">
+      </div>
+    <form id="contact-form">
+      
+      <div class="form-group">
+        <div class="field">
+          <input type="text" id="name" name="name" placeholder="Name" required>
+          <i class='fas fa-user'></i>
+        </div>
+        <div class="field">
+          <input type="text" id="email" name="email" placeholder="Email" required>
+          <i class='fas fa-envelope'></i>
+        </div>
+        <div class="field">
+          <input type="text" id="phone" name="phone" placeholder="Phone">
+          <i class='fas fa-phone-alt'></i>
+        </div>
+        <div class="message">
+        <textarea placeholder="Message" id="message" name="message" required></textarea>
+        <i class="fas fa-comment-dots"></i>
+        </div>
+        </div>
+      <div class="button-area">
+        <button type="submit">
+          Submit <i class="fa fa-paper-plane"></i></button>
+      </div>
+    </form>
+  </div>
+  </div>
+</section>
+<!-- contact section ends -->
+
+
+<!-- footer section starts -->
+<section class="footer">
+
+  <div class="box-container">
+
+      <div class="box">
+          <h3>Isha's Portfolio</h3>
+          <p>Thank you for visiting my portfolio website. Connect with me over social media. <br/> <br/> Keep Rising 🚀. Connect with me over live chat!</p>
+      </div>
+
+      <div class="box">
+          <h3>quick links</h3>
+          <a href="#home"><i class="fas fa-chevron-circle-right"></i> home</a>
+          <a href="#about"><i class="fas fa-chevron-circle-right"></i> about</a>
+          <a href="#skills"><i class="fas fa-chevron-circle-right"></i> skills</a>
+          <a href="#education"><i class="fas fa-chevron-circle-right"></i> education</a>
+          <a href="#work"><i class="fas fa-chevron-circle-right"></i> work</a>
+          <a href="#experience"><i class="fas fa-chevron-circle-right"></i> experience</a>
+      </div>
+
+      <div class="box">
+          <h3>contact info</h3>
+          <p>
+            <i class="fas fa-phone" style="display: inline;"></i>
+            <a href="tel:+12602407123" style="display: inline;">+1 260-240-7123</a>
+          </p>          
+          <p>
+            <i class="fas fa-envelope" style="display: inline;"></i>
+            <a href="mailto:ishapawar181@gmail.com" target="_blank" style="display: inline;">ishapawar181@gmail.com</a>
+           </p>
+          <p>
+            <i class="fas fa-map-marked-alt" style="display: inline;"></i>
+            <a href="https://maps.app.goo.gl/e4QMyEG2EReAx3wt8" target="_blank" style="display: inline;">Bellevue, WA-98004</a>
+          </p>
+          <div class="share">
+
+              <a href="https://linkedin.com/in/ishap23" class="fab fa-linkedin" aria-label="LinkedIn" target="_blank"></a>
+              <a href="https://github.com/Isha2303165" class="fab fa-github" aria-label="GitHub" target="_blank"></a>
+              <a href="mailto:ishapawar181@gmail.com" class="fas fa-envelope" aria-label="Mail" target="_blank"></a>
+              <!-- <a href="https://hackerrank.com/yash_pawar642" class="fab fa-hackerrank" aria-label="hackerrank" target="_blank"></a> -->
+              <!-- <a href="https://t.me/NeuYash" class="fab fa-telegram-plane" aria-label="Telegram" target="_blank"></a> -->
+              <!-- <a href="https://www.youtube.com/@yashpawar1947" class="fab fa-youtube" aria-label="YouTube" target="_blank"></a> -->
+          </div>
+      </div>
+  </div>
+
+  <h1 class="credit">Designed with <i class="fa fa-heart pulse"></i> by <a href="https://linkedin.com/in/ishap23"> Isha Pawar</a></h1>
+
+</section>
+<!-- footer section ends -->
+
+
+<!-- scroll top btn -->
+<a href="#home" aria-label="ScrollTop" class="fas fa-angle-up" id="scroll-top"></a>
+<!-- scroll back to top -->
+
+
+<!-- ==== ALL MAJOR JAVASCRIPT CDNS STARTS ==== -->
+<!-- jquery cdn -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<!-- typed.js cdn -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.5/typed.min.js" integrity="sha512-1KbKusm/hAtkX5FScVR5G36wodIMnVd/aP04af06iyQTkD17szAMGNmxfNH+tEuFp3Og/P5G32L1qEC47CZbUQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<!-- particle.js links -->
+<script src="./assets/js/particles.min.js"></script>
+<script src="./assets/js/app.js"></script>
+
+<!-- vanilla tilt.js links -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js" integrity="sha512-SttpKhJqONuBVxbRcuH0wezjuX+BoFoli0yPsnrAADcHsQMW8rkR84ItFHGIkPvhnlRnE2FaifDOUw+EltbuHg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<!-- scroll reveal anim -->
+<script src="https://unpkg.com/scrollreveal"></script>
+
+<!-- isotope filter plugin cdn -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha512-Zq2BOxyhvnRFXu0+WE6ojpZLOU2jdnqbrM1hmVdGzyeCa1DgM3X5Q4A/Is9xA1IkbUeDd7755dNNI/PzSf2Pew==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"
+    ></script>
+
+<!-- ==== ALL MAJOR JAVASCRIPT CDNS ENDS ==== -->
+
+<script src="./assets/js/script.js"></script>
+
+</body>
+</html>

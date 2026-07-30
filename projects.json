@@ -1,0 +1,32 @@
+[
+  {
+    "name": "Candidate Recommendation Engine",
+    "desc": "Built an AI-powered Streamlit application that matches job descriptions with candidate resumes and ranks applicants using semantic similarity. The system supports PDF, DOCX, TXT, and image resumes using OCR, generates local embeddings with SentenceTransformers, calculates cosine-similarity scores, and produces AI-generated candidate summaries.",
+    "image": "candidate-recommendation.png",
+    "category": "AI Python",
+    "links": {
+      "view": "https://github.com/Isha2303165/CandidateRecommendation",
+      "code": "https://github.com/Isha2303165/CandidateRecommendation"
+    }
+  },
+  {
+    "name": "MastodonGPT",
+    "desc": "Built an AI-powered university navigation chatbot using Gemini 2.0, LangChain, retrieval-augmented generation, and FAISS. Developed the full-stack application using React, Next.js, and Python to provide fast, retrieval-backed answers about university resources.",
+    "image": "mastodongpt.jpeg",
+    "category": "AI FullStack Python",
+    "links": {
+      "view": "https://github.com/Isha2303165/MastadonGPT",
+      "code": "https://github.com/Isha2303165/MastadonGPT"
+    }
+  },
+  {
+    "name": "AI-Powered Video Transcriber",
+    "desc": "Developed a privacy-focused desktop application that converts video content into accurate transcripts and subtitles using FFmpeg and Faster-Whisper. Integrated a custom T5 NLP model trained on more than 100,000 sentence pairs to clean transcripts while supporting local, cloud-free inference on Windows and macOS.",
+    "image": "video-transcriber.png",
+    "category": "AI Python",
+    "links": {
+      "view": "https://github.com/Isha2303165/Video_Transcriber",
+      "code": "https://github.com/Isha2303165/Video_Transcriber"
+    }
+  }
+]
