@@ -648,7 +648,7 @@ header .navbar ul li a:hover {
     linear-gradient(90deg, rgba(255, 255, 255, 0.012) 1px, transparent 1px);
   background-size: 38px 38px;
   opacity: 0.22;
-  animation: gridMoveFast 4.5s linear infinite;
+  animation: gridMoveFast 16s linear infinite;
 }
 
 .circuit-svg {
@@ -703,29 +703,21 @@ header .navbar ul li a:hover {
 }
 
 /* text for dark background */
-.home .content h2 {
-  color: #eef7ff;
-}
+/* Hero text — stronger visual focus */
 
-.home .content h2 span {
-  color: #58d8ff;
-}
-
-.home .content h3 {
-  color: #c0daf3;
-}
-
-.home .content h3 span {
-  color: #8af6ff;
-}
-
+.home .content h2,
+.home .content h3,
 .home .content p {
-  color: #f7fbff;
+  color: #ffffff;
+  text-shadow: none;
 }
 
+.home .content h2 span,
+.home .content h3 span,
 .home .content p .typing-text {
-  color: #68ebff;
+  color: #edcb59;
   font-weight: 700;
+  text-shadow: none;
 }
 
 /* button */

@@ -91,12 +91,12 @@ scrollReveal.reveal(
     }
 );
 
-scrollReveal.reveal(
-    ".experience .timeline .container",
-    {
-        interval: 200
-    }
-);
+// scrollReveal.reveal(
+//     ".experience .timeline .container",
+//     {
+//         interval: 200
+//     }
+// );
 
 scrollReveal.reveal(
     ".experience .morebtn",
