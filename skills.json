@@ -80,6 +80,10 @@
     "icon": "https://cdn.simpleicons.org/amazondynamodb"
   },
   {
+    "name": "GitHub Actions",
+    "icon": "https://cdn.simpleicons.org/githubactions"
+  },
+  {
     "name": "Oracle",
     "icon": "https://img.icons8.com/color/48/oracle-logo.png"
   },
@@ -112,12 +116,16 @@
     "icon": "https://img.icons8.com/color/48/kubernetes.png"
   },
   {
-    "name": "GitHub Actions",
-    "icon": "https://cdn.simpleicons.org/githubactions"
+    "name": "CI/CD",
+    "icon": "https://cdn.simpleicons.org/githubactions/ffffff"
   },
   {
-    "name": "CI/CD",
-    "icon": "https://img.icons8.com/color/48/continuous-integration.png"
+    "name": "LangChain",
+    "icon": "https://img.icons8.com/color/48/link.png"
+  },
+  {
+    "name": "Prompt Engineering",
+    "icon": "https://img.icons8.com/color/48/chatgpt.png"
   },
   {
     "name": "Elasticsearch",
@@ -129,15 +137,7 @@
   },
   {
     "name": "OpenAI API",
-    "icon": "https://cdn.simpleicons.org/openai/ffffff"
-  },
-  {
-    "name": "Prompt Engineering",
     "icon": "https://img.icons8.com/color/48/chatgpt.png"
-  },
-  {
-    "name": "LangChain",
-    "icon": "https://img.icons8.com/color/48/link.png"
   },
   {
     "name": "RAG",

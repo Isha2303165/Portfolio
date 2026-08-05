@@ -5,39 +5,69 @@ $(document).ready(function () {
         $(".navbar").toggleClass("nav-toggle");
     });
 
-    // Close mobile menu and manage scroll-to-top button
+    // Close mobile navigation while scrolling
     $(window).on("scroll load", function () {
         $("#menu").removeClass("fa-times");
         $(".navbar").removeClass("nav-toggle");
 
-        const scrollTopButton = document.querySelector("#scroll-top");
+        const scrollTopButton =
+            document.querySelector("#scroll-top");
 
-        if (window.scrollY > 60) {
-            scrollTopButton.classList.add("active");
-        } else {
-            scrollTopButton.classList.remove("active");
+        if (scrollTopButton) {
+            if (window.scrollY > 60) {
+                scrollTopButton.classList.add("active");
+            } else {
+                scrollTopButton.classList.remove("active");
+            }
         }
+    });
+
+    // Smooth scrolling for links on this page
+    $('a[href^="#"]').on("click", function (event) {
+        const targetSelector = $(this).attr("href");
+
+        if (
+            targetSelector === "#" ||
+            !document.querySelector(targetSelector)
+        ) {
+            return;
+        }
+
+        event.preventDefault();
+
+        $("html, body").animate(
+            {
+                scrollTop: $(targetSelector).offset().top
+            },
+            500,
+            "linear"
+        );
     });
 });
 
-// Change browser-tab title
-document.addEventListener("visibilitychange", function () {
-    if (document.visibilityState === "visible") {
-        document.title = "Projects | Isha Pawar";
-        $("#favicon").attr(
-            "href",
-            "../assets/images/favicon.png"
-        );
-    } else {
-        document.title = "Come Back To Portfolio";
-        $("#favicon").attr(
-            "href",
-            "../assets/images/favicon.png"
-        );
-    }
-});
+// Browser-tab title
+document.addEventListener(
+    "visibilitychange",
+    function () {
+        if (document.visibilityState === "visible") {
+            document.title = "Project Work | Isha Pawar";
 
-// Fetch projects from the root projects.json file
+            $("#favicon").attr(
+                "href",
+                "../assets/images/flower.png"
+            );
+        } else {
+            document.title = "Come Back To Portfolio";
+
+            $("#favicon").attr(
+                "href",
+                "../assets/images/flower.png"
+            );
+        }
+    }
+);
+
+// Load projects from the root projects.json file
 async function getProjects() {
     const response = await fetch("../projects.json");
 
@@ -58,6 +88,33 @@ function showProjects(projects) {
     let projectsHTML = "";
 
     projects.forEach((project) => {
+        /*
+         * External links already contain http/https.
+         * Internal links such as projects/video-transcriber.html
+         * need ../ because this script is already inside /projects.
+         */
+        const viewLink = project.links.view
+            ? project.links.view.startsWith("http")
+                ? project.links.view
+                : `../${project.links.view}`
+            : "";
+
+        /*
+         * If view is empty, do not display the View button.
+         * No target="_blank" means View opens in the same tab.
+         */
+        const viewButton = viewLink
+            ? `
+                <a
+                    href="${viewLink}"
+                    class="btn"
+                >
+                    <i class="fas fa-eye"></i>
+                    View
+                </a>
+            `
+            : "";
+
         projectsHTML += `
             <div class="grid-item ${project.category}">
                 <div class="box tilt">
@@ -77,15 +134,7 @@ function showProjects(projects) {
                             <p>${project.desc}</p>
 
                             <div class="btns">
-                                <a
-                                    href="${project.links.view}"
-                                    class="btn"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                >
-                                    <i class="fas fa-eye"></i>
-                                    View
-                                </a>
+                                ${viewButton}
 
                                 <a
                                     href="${project.links.code}"
@@ -106,7 +155,7 @@ function showProjects(projects) {
 
     projectsContainer.innerHTML = projectsHTML;
 
-    // Tilt animation
+    // Project-card tilt effect
     VanillaTilt.init(
         document.querySelectorAll(".work .tilt"),
         {
@@ -114,24 +163,25 @@ function showProjects(projects) {
         }
     );
 
-    // Scroll animation
+    // Project-card scroll animation
     const scrollReveal = ScrollReveal({
         origin: "bottom",
         distance: "80px",
         duration: 1000,
-        reset: true
+        reset: false
     });
 
     scrollReveal.reveal(".work .box", {
         interval: 200
     });
 
-    // Project filtering
+    // Initialize project filtering
     const $grid = $(".box-container").isotope({
         itemSelector: ".grid-item",
         layoutMode: "fitRows"
     });
 
+    // Filter projects when a button is clicked
     $(".button-group").on(
         "click",
         "button",
@@ -152,7 +202,7 @@ function showProjects(projects) {
     );
 }
 
-// Load projects
+// Load and display projects
 getProjects()
     .then(showProjects)
     .catch((error) => {
@@ -166,10 +216,12 @@ getProjects()
                 ".work .box-container"
             );
 
-        projectsContainer.innerHTML = `
-            <p class="project-error">
-                Projects could not be loaded.
-                Please try again later.
-            </p>
-        `;
+        if (projectsContainer) {
+            projectsContainer.innerHTML = `
+                <p class="project-error">
+                    Projects could not be loaded.
+                    Please try again later.
+                </p>
+            `;
+        }
     });

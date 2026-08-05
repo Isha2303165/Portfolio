@@ -5,17 +5,17 @@
     "image": "candidate-recommendation.png",
     "category": "AI Python",
     "links": {
-      "view": "https://github.com/Isha2303165/CandidateRecommendation",
+      "view": "",
       "code": "https://github.com/Isha2303165/CandidateRecommendation"
     }
   },
   {
     "name": "MastodonGPT",
     "desc": "Built an AI-powered university navigation chatbot using Gemini 2.0, LangChain, retrieval-augmented generation, and FAISS. Developed the full-stack application using React, Next.js, and Python to provide fast, retrieval-backed answers about university resources.",
-    "image": "mastodongpt.jpeg",
+    "image": "mastodongpt.png",
     "category": "AI FullStack Python",
     "links": {
-      "view": "https://github.com/Isha2303165/MastadonGPT",
+      "view": "https://mastodongpt-admin.onrender.com/",
       "code": "https://github.com/Isha2303165/MastadonGPT"
     }
   },
@@ -25,7 +25,7 @@
     "image": "video-transcriber.png",
     "category": "AI Python",
     "links": {
-      "view": "https://github.com/Isha2303165/Video_Transcriber",
+      "view": "projects/video-transcriber.html",
       "code": "https://github.com/Isha2303165/Video_Transcriber"
     }
   }

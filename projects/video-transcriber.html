@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+
+  <meta
+    name="description"
+    content="AI-Powered Video Transcriber project developed by Isha Pawar using Faster-Whisper, FFmpeg, T5, Python, and local AI inference."
+  />
+
+  <meta name="author" content="Isha Pawar" />
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+
+  <link
+    rel="shortcut icon"
+    href="../assets/images/flower.png"
+    type="image/png"
+  />
+
+  <title>AI-Powered Video Transcriber | Isha Pawar</title>
+
+  <style>
+    @import url(
+      "https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+    );
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      text-decoration: none;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Poppins", sans-serif;
+      background: #f5f7ff;
+      color: #161616;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.2rem 8%;
+      background: #ffffff;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    }
+
+    header .logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      color: #0e2431;
+      font-size: 1.2rem;
+      font-weight: 700;
+    }
+
+    header .logo i {
+      color: #2506ad;
+    }
+
+    header nav {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    header nav a {
+      color: #0e2431;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+
+    header nav a:hover {
+      color: #2506ad;
+    }
+
+    main {
+      width: 100%;
+      max-width: 1200px;
+      margin: auto;
+      padding: 4rem 2rem;
+    }
+
+    .hero {
+      padding: 2rem 0 3rem;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 2.8rem;
+      line-height: 1.3;
+      color: #020133;
+    }
+
+    .hero h1 span {
+      color: #57059e;
+    }
+
+    .hero p {
+      max-width: 850px;
+      margin: 1.5rem auto 0;
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: #444;
+    }
+
+    .tech-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.8rem;
+      margin-top: 2rem;
+    }
+
+    .tech-list span {
+      padding: 0.6rem 1rem;
+      background: #2506ad;
+      color: #ffffff;
+      border-radius: 2rem;
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+
+    .section-title {
+      margin: 3rem 0 1.5rem;
+      text-align: center;
+      font-size: 2rem;
+      color: #020133;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 4rem;
+    }
+
+    .feature-card {
+      padding: 1.6rem;
+      background: #ffffff;
+      border-left: 5px solid #57059e;
+      border-radius: 0.7rem;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+      transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    }
+
+    .feature-card h3 {
+      margin-bottom: 0.7rem;
+      color: #2506ad;
+    }
+
+    .feature-card p {
+      line-height: 1.7;
+      color: #444;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .screenshot {
+      overflow: hidden;
+      background: #ffffff;
+      border-radius: 0.8rem;
+      box-shadow: 0 5px 18px rgba(0, 0, 0, 0.15);
+      transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+    }
+
+    .screenshot:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 9px 24px rgba(0, 0, 0, 0.2);
+    }
+
+    .screenshot img {
+      display: block;
+      width: 100%;
+      height: 350px;
+      object-fit: contain;
+      background: #ffffff;
+      cursor: zoom-in;
+    }
+
+    .screenshot p {
+      padding: 1rem;
+      text-align: center;
+      font-weight: 600;
+      color: #222;
+    }
+
+    .workflow {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem;
+      background: #ffffff;
+      border-radius: 0.8rem;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    }
+
+    .workflow ol {
+      padding-left: 1.5rem;
+    }
+
+    .workflow li {
+      margin-bottom: 1rem;
+      line-height: 1.7;
+      color: #444;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 4rem;
+    }
+
+    .actions a {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.9rem 1.5rem;
+      border-radius: 0.5rem;
+      background: #2506ad;
+      color: #ffffff;
+      font-weight: 600;
+      transition:
+        background 0.3s ease,
+        transform 0.3s ease;
+    }
+
+    .actions a:hover {
+      background: #57059e;
+      transform: translateY(-2px);
+    }
+
+    footer {
+      padding: 1.5rem;
+      text-align: center;
+      background: #00012b;
+      color: #ffffff;
+    }
+
+    @media screen and (max-width: 800px) {
+      header {
+        padding: 1rem 5%;
+      }
+
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+
+      .features,
+      .gallery {
+        grid-template-columns: 1fr;
+      }
+
+      .screenshot img {
+        height: auto;
+      }
+    }
+
+    @media screen and (max-width: 600px) {
+      header {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      header nav {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      main {
+        padding: 3rem 1.2rem;
+      }
+
+      .hero h1 {
+        font-size: 1.9rem;
+      }
+
+      .hero p {
+        font-size: 0.95rem;
+      }
+
+      .section-title {
+        font-size: 1.7rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <a href="../index.html" class="logo">
+      <i class="fas fa-code"></i>
+      Isha Pawar
+    </a>
+
+    <nav>
+  <a href="../index.html#home">Home</a>
+  <a href="../index.html#about">About</a>
+  <a href="../index.html#skills">Skills</a>
+  <a href="./index.html">Project Work</a>
+  <a href="../education/index.html">Education</a>
+  <a href="../experience/index.html">Experience</a>
+  <a href="../contact/index.html">Contact</a>
+</nav>
+  </header>
+
+  <main>
+
+    <section class="hero">
+      <h1>
+        AI-Powered
+        <span>Video Transcriber</span>
+      </h1>
+
+      <p>
+        A privacy-focused desktop application that converts video content into
+        accurate transcripts and subtitles. The application uses FFmpeg for
+        media processing, Faster-Whisper for automatic speech recognition, and
+        a custom T5 natural-language-processing model trained on more than
+        100,000 sentence pairs to improve transcript quality.
+      </p>
+
+      <div class="tech-list">
+        <span>Python</span>
+        <span>Faster-Whisper</span>
+        <span>FFmpeg</span>
+        <span>T5</span>
+        <span>NLP</span>
+        <span>ASR</span>
+        <span>Tkinter</span>
+        <span>Local Inference</span>
+      </div>
+    </section>
+
+
+    <h2 class="section-title">How It Works</h2>
+
+    <section class="workflow">
+      <ol>
+        <li>
+          The user selects and uploads a video from the desktop application.
+        </li>
+
+        <li>
+          FFmpeg extracts and prepares the audio track for speech recognition.
+        </li>
+
+        <li>
+          Faster-Whisper converts the audio into timestamped text.
+        </li>
+
+        <li>
+          The custom T5 model cleans and improves the generated transcript.
+        </li>
+
+        <li>
+          The final transcript and subtitle output are generated for the user.
+        </li>
+      </ol>
+    </section>
+
+    <h2 class="section-title" id="screenshots">
+      Application Screenshots
+    </h2>
+
+    <section class="gallery">
+
+      <article class="screenshot">
+        <a
+          href="../assets/images/yashprojects/video-transcriber/videoUpload.jpg"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="../assets/images/yashprojects/video-transcriber/videoUpload.jpg"
+            alt="Video Transcriber upload interface"
+          />
+        </a>
+
+        <p>Upload a Video</p>
+      </article>
+
+      <article class="screenshot">
+        <a
+          href="../assets/images/yashprojects/video-transcriber/Video-transcriber-generator.jpg"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="../assets/images/yashprojects/video-transcriber/Video-transcriber-generator.jpg"
+            alt="Video Transcriber generator interface"
+          />
+        </a>
+
+        <p>Transcription Generator</p>
+      </article>
+
+      <article class="screenshot">
+        <a
+          href="../assets/images/yashprojects/video-transcriber/transcriptionCompleted.jpg"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="../assets/images/yashprojects/video-transcriber/transcriptionCompleted.jpg"
+            alt="Completed video transcription result"
+          />
+        </a>
+
+        <p>Completed Transcription</p>
+      </article>
+
+    </section>
+
+    <div class="actions">
+      <a
+        href="https://github.com/Isha2303165/Video_Transcriber"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <i class="fab fa-github"></i>
+        View Code
+      </a>
+
+       <a
+          href="./index.html"
+          onclick="
+            if (window.history.length > 1) {
+              event.preventDefault();
+              window.history.back();
+            }
+          "
+        >
+          <i class="fas fa-arrow-left"></i>
+          Go Back
+        </a>
+    </div>
+
+  </main>
+
+  <footer>
+    <p>© Isha Pawar | AI-Powered Video Transcriber</p>
+  </footer>
+
+</body>
+</html>

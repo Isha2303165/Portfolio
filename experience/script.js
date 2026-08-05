@@ -55,7 +55,7 @@ document.addEventListener(
 
             $("#favicon").attr(
                 "href",
-                "../assets/images/favicon.png"
+                "../assets/images/flower.png"
             );
         } else {
             document.title =
@@ -63,7 +63,7 @@ document.addEventListener(
 
             $("#favicon").attr(
                 "href",
-                "../assets/images/favicon.png"
+                "../assets/images/flower.png"
             );
         }
     }
@@ -110,4 +110,106 @@ scrollReveal.reveal(
     {
         interval: 150
     }
+);
+
+function initializeExperienceTracker() {
+    const timeline =
+        document.getElementById("experienceTimeline");
+
+    const trackerDot =
+        document.getElementById("timelineTrackerDot");
+
+    const experienceItems = Array.from(
+        document.querySelectorAll(
+            ".experience .timeline .container"
+        )
+    );
+
+    if (
+        !timeline ||
+        !trackerDot ||
+        experienceItems.length === 0
+    ) {
+        return;
+    }
+
+    function updateTracker() {
+        const viewportCenter =
+            window.innerHeight / 2;
+
+        let closestItem = experienceItems[0];
+        let smallestDistance = Infinity;
+
+        experienceItems.forEach((item) => {
+            const rect =
+                item.getBoundingClientRect();
+
+            const itemCenter =
+                rect.top + rect.height / 2;
+
+            const distance =
+                Math.abs(itemCenter - viewportCenter);
+
+            if (distance < smallestDistance) {
+                smallestDistance = distance;
+                closestItem = item;
+            }
+        });
+
+        experienceItems.forEach((item) => {
+            item.classList.remove(
+                "active-experience"
+            );
+        });
+
+        closestItem.classList.add(
+            "active-experience"
+        );
+
+        /*
+         * Timeline nodes are positioned near the top
+         * of each experience container.
+         */
+        const nodePosition =
+            closestItem.offsetTop + 27;
+
+        const dotOffset =
+            trackerDot.offsetHeight / 2;
+
+        trackerDot.style.top =
+            `${nodePosition - dotOffset}px`;
+    }
+
+    let ticking = false;
+
+    function requestTrackerUpdate() {
+        if (ticking) {
+            return;
+        }
+
+        ticking = true;
+
+        window.requestAnimationFrame(() => {
+            updateTracker();
+            ticking = false;
+        });
+    }
+
+    window.addEventListener(
+        "scroll",
+        requestTrackerUpdate,
+        { passive: true }
+    );
+
+    window.addEventListener(
+        "resize",
+        requestTrackerUpdate
+    );
+
+    updateTracker();
+}
+
+document.addEventListener(
+    "DOMContentLoaded",
+    initializeExperienceTracker
 );

@@ -67,11 +67,11 @@ document.addEventListener('visibilitychange',
     function () {
         if (document.visibilityState === "visible") {
             document.title = "Isha Pawar | Software Engineer";
-            $("#favicon").attr("href", "assets/images/favicon.png");
+            $("#favicon").attr("href", "assets/images/flower.png");
         }
         else {
             document.title = "Come Back To Portfolio";
-            $("#favicon").attr("href", "assets/images/cmsoon.png");
+            $("#favicon").attr("href", "assets/images/flower.png");
         }
     });
 
@@ -92,17 +92,12 @@ var typed = new Typed(".typing-text", {
 });
 // <!-- typed js effect ends -->
 
-async function fetchData(type = "skills") {
-    const filePath =
-        type === "skills"
-            ? "./skills.json"
-            : "./projects.json";
-
-    const response = await fetch(filePath);
+async function fetchSkills() {
+    const response = await fetch("./skills.json");
 
     if (!response.ok) {
         throw new Error(
-            `Unable to load ${filePath}: ${response.status}`
+            `Unable to load skills.json: ${response.status}`
         );
     }
 
@@ -110,131 +105,43 @@ async function fetchData(type = "skills") {
 }
 
 function showSkills(skills) {
-    let skillsContainer = document.getElementById("skillsContainer");
+    const skillsContainer =
+        document.getElementById("skillsContainer");
+
+    if (!skillsContainer) {
+        console.error("skillsContainer was not found.");
+        return;
+    }
+
     let skillHTML = "";
-    skills.forEach(skill => {
+
+    skills.forEach((skill) => {
         skillHTML += `
-        <div class="bar">
-              <div class="info">
-                <img
-                    src="${skill.icon}"
-                    alt="${skill.name} logo"
-                    loading="lazy"
-                />
-                <span>${skill.name}</span>
-              </div>
-            </div>`
+            <div class="bar">
+                <div class="info">
+                    <img
+                        src="${skill.icon}"
+                        alt="${skill.name} logo"
+                        loading="lazy"
+                    />
+                    <span>${skill.name}</span>
+                </div>
+            </div>
+        `;
     });
+
     skillsContainer.innerHTML = skillHTML;
 }
 
-function showProjects(projects) {
-    // let projectsContainer = document.querySelector("#work .workbox-container");
-    // let projectHTML = "";
-    // projects.slice(0, 15).filter(project => project.category != "android").forEach(project => {
-    //     projectHTML += `
-    //     <div class="box tilt">
-    //   <img draggable="false" src="./assets/images/yashprojects/${project.image}" alt="project" />
-    //   <div class="content">
-    //     <div class="tag">
-    //     <h3>${project.name}</h3>
-    //     </div>
-    //     <div class="desc">
-    //       <p>${project.desc}</p>
-    //       <div class="btns">
-    //         <a href="${project.links.view}" class="btn" target="_blank"><i class="fas fa-eye"></i> View</a>
-    //         <a href="${project.links.code}" class="btn" target="_blank">Code <i class="fas fa-code"></i></a>
-    //       </div>
-    //     </div>
-    //   </div>
-    // </div>`
-    // });
-    // projectsContainer.innerHTML = projectHTML;
-    let projectsContainer = document.querySelector("#work .workbox-container");
-    let projectsHTML = "";
-    projects.forEach(project => {
-        projectsHTML += `
-        <div class="grid-item ${project.category}">
-        <div class="box tilt" style="width: 350px; margin: 1rem">
-        <img
-            draggable="false"
-            src="./assets/images/yashprojects/${project.image}"
-            alt="${project.name}"
-            />
-      <div class="content">
-        <div class="tag">
-        <h3>${project.name}</h3>
-        </div>
-        <div class="desc">
-          <p>${project.desc}</p>
-          <div class="btns">
-            <a href="${project.links.view}" class="btn" target="_blank"><i class="fas fa-eye"></i> View</a>
-            <a href="${project.links.code}" class="btn" target="_blank">Code <i class="fas fa-code"></i></a>
-          </div>
-        </div>
-      </div>
-    </div>
-    </div>`
-    });
-    projectsContainer.innerHTML = projectsHTML;
-
-    // <!-- tilt js effect starts -->
-   VanillaTilt.init(
-    document.querySelectorAll("#work .tilt"),
-    {
-        max: 15
-    }
-);
-    // <!-- tilt js effect ends -->
-
-    /* ===== SCROLL REVEAL ANIMATION ===== */
-    // const srtop = ScrollReveal({
-    //     origin: 'top',
-    //     distance: '80px',
-    //     duration: 1000,
-    //     reset: true
-    // });
-
-    // /* SCROLL PROJECTS */
-    // srtop.reveal('.work .box', { interval: 200 });
-
-    // isotope filter products
-    var $grid = $('.workbox-container').isotope({
-        itemSelector: '.grid-item',
-        layoutMode: 'fitRows',
-        masonry: {
-            columnWidth: 200
-        }
-    });
-
-    // filter items on button click
-    $('.button-group').on('click', 'button', function () {
-        $('.button-group').find('.is-checked').removeClass('is-checked');
-        $(this).addClass('is-checked');
-        var filterValue = $(this).attr('data-filter');
-        $grid.isotope({ filter: filterValue });
-    });
-}
-
-fetchData("skills")
+fetchSkills()
     .then(showSkills)
-    .catch(error => {
+    .catch((error) => {
         console.error("Skills loading failed:", error);
     });
 
-fetchData("projects")
-    .then(showProjects)
-    .catch(error => {
-        console.error("Projects loading failed:", error);
-    });
 
 // <!-- tilt js effect starts -->
-VanillaTilt.init(
-    document.querySelectorAll("#work .tilt"),
-    {
-        max: 15
-    }
-);
+
 // <!-- tilt js effect ends -->
 
 
@@ -281,6 +188,7 @@ srtop.reveal('.about .content .resumebtn', { delay: 200 });
 /* SCROLL SKILLS */
 srtop.reveal('.skills .container', { interval: 200 });
 srtop.reveal('.skills .container .bar', { delay: 400 });
+
 
 /* SCROLL EDUCATION */
 // srtop.reveal('.education .box', { interval: 200 });

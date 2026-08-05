@@ -1,14 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&display=swap');
 
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   text-decoration: none;
-  outline: none; border: none;
-  text-transform: none;
-  transition: all .2s linear;
 }
 html{
   font-size: 62.5%;
@@ -25,19 +22,8 @@ body{
   color: #fff;
 }
 
-html{
-  font-size: 62.5%;
-  overflow-x: hidden;
-}
-html::-webkit-scrollbar{
-  width: .8rem;
-}
-html::-webkit-scrollbar-track{
-  background: rgb(235, 202, 245);
-}
-html::-webkit-scrollbar-thumb{
-  background: #420177;
-}
+
+
 
 /* navbar starts */
 header{
@@ -94,10 +80,10 @@ header .navbar ul li a{
   letter-spacing: 0.04rem;
 }
 header .navbar ul li a.active,
-header .navbar ul li a:hover{
-  color: #011aff;
-  border-bottom: .2rem solid #011aff;
-  padding: .5rem 0;
+header .navbar ul li a:hover {
+  color: #0f9d8a;
+  border-bottom: 0.2rem solid #0f9d8a;
+  padding: 0.5rem 0;
 }
 /* navbar ends */
 
@@ -127,7 +113,6 @@ header .navbar ul li a:hover{
   }
   header .navbar ul li{
     text-align: center;
-    width: 100%;
     margin: 1rem 0;
     border-radius: .5rem;
     width: 26rem;
@@ -144,7 +129,7 @@ header .navbar ul li a:hover{
     padding: 1rem;
     color: #fff;
     border-radius: .5rem;
-    border-bottom: .5rem solid #011aff;
+   border-bottom: 0.5rem solid #0f9d8a;
   }
   .fa-times{
     transform: rotate(180deg);
@@ -160,7 +145,7 @@ header .navbar ul li a:hover{
   margin-top: 5rem;
   padding-top: 5rem;
   padding-bottom: 5rem;
-  background: #f7f7f7;
+
 }
 .experience .quote {
   max-width: 800px;
@@ -250,42 +235,31 @@ header .navbar ul li a:hover{
 .experience .content {
   position: relative;
   overflow: hidden;
-  background-color: #f68c09;
-  border-radius: 0.8rem;
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
 }
-.experience .content .tag {
-  padding: 1.5rem;
-  background: rgba(255, 255, 255, 0.18);
-}
+
 
 .experience .content .tag h2 {
   font-size: 1.8rem;
   line-height: 1.4;
 }
-.experience .content .desc {
-  margin-left: 0;
-  padding: 1.2rem 1.5rem 1.5rem;
-}
+
 .experience .content .desc h3 {
   margin-bottom: 0.4rem;
   font-size: 1.6rem;
   font-weight: 700;
-  color: #111;
+  
 }
 .experience .content .desc p {
   font-size: 1.25rem;
   line-height: 1.5;
   text-transform: none;
 }
-.experience .content .desc .location {
-  color: #333;
-}
+
 
 .experience .content .desc .date {
   margin-top: 0.2rem;
   font-weight: 600;
-  color: #222;
+  
 }
 
 .experience .content .desc ul {
@@ -306,17 +280,7 @@ header .navbar ul li a:hover{
   margin-top: 4rem;
   margin-bottom: 2rem;
 }
-.morebtn .btn {
-  position: relative;
-  line-height: 0;
-  padding: 1.6rem 3rem;
-  border-radius: .5em;
-  transition: 0.5s;
-  color: #fff;
-  background: #2506ad;
-  box-shadow: 0px 5px 10px rgba(48, 68, 247, .6);
-  text-align: center;
-}
+
 .morebtn .btn span {
   font-weight: 600;
   font-size: 1.7rem;
@@ -327,9 +291,7 @@ header .navbar ul li a:hover{
   font-size: 1.5rem;
   transition: 0.3s;
 }
-.morebtn .btn:hover{
-  background: #1a047e;
-}
+
 .morebtn .btn:hover i {
   transform: translateX(-8px);
 }
@@ -382,7 +344,34 @@ header .navbar ul li a:hover{
 }
 /* experience media queries ends */
 /* experience section ends */
+/* ===== EXPERIENCE PAGE SCROLLBAR ===== */
 
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #04101a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    to bottom,
+    #2dd4bf,
+    #0f9d8a
+  );
+  border: 2px solid #04101a;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #42e5cf;
+}
+
+html {
+  scrollbar-width: thin;
+  scrollbar-color: #0f9d8a #04101a;
+}
 
 /* footer section starts */
 .footer{
@@ -466,11 +455,7 @@ header .navbar ul li a:hover{
     font-size: 1.5rem;
     animation: pound .35s infinite alternate;
 }
-@-webkit-keyframes pound{
-  to{
-    transform: scale(1.1);
-  }
-}
+
 @keyframes pound{
   to{
     transform: scale(1.1);
@@ -504,20 +489,498 @@ header .navbar ul li a:hover{
 /* common media queries ends*/
 
 
-/* scroll top starts */
-#scroll-top{
+/* ===== DARK CODER EXPERIENCE THEME ===== */
+
+.experience {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(
+      circle at 12% 15%,
+      rgba(0, 210, 190, 0.11),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 88% 82%,
+      rgba(33, 126, 210, 0.12),
+      transparent 32%
+    ),
+    linear-gradient(
+      135deg,
+      #020810 0%,
+      #071522 48%,
+      #04101a 100%
+    );
+}
+
+/* Subtle coding grid */
+
+.experience::before {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-image:
+    linear-gradient(
+      rgba(255, 255, 255, 0.018) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.018) 1px,
+      transparent 1px
+    );
+  background-size: 42px 42px;
+  content: "";
+  pointer-events: none;
+}
+
+/* Keep all content above background */
+
+.experience .heading,
+.experience .quote,
+.experience .timeline {
+  position: relative;
+  z-index: 2;
+}
+
+/* Heading */
+
+.experience .heading {
+  color: #f2f8fc;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+}
+
+.experience .heading span {
+  color: #2dd4bf;
+}
+
+.experience .quote {
+  color: #b8c9d6;
+}
+
+/* Central timeline */
+
+.experience .timeline::after {
+  width: 5px;
+  background: linear-gradient(
+    to bottom,
+    #2dd4bf,
+    #249bd1,
+    #2dd4bf
+  );
+  box-shadow:
+    0 0 8px rgba(45, 212, 191, 0.45),
+    0 0 18px rgba(36, 155, 209, 0.2);
+}
+
+/* Timeline nodes */
+
+.experience .container::after {
+  background: #061523;
+  border-color: #2dd4bf;
+  color: #d9fbf5;
+  box-shadow:
+    0 0 0 5px rgba(45, 212, 191, 0.11),
+    0 0 15px rgba(45, 212, 191, 0.45);
+  animation: experienceNodeGlow 1.8s ease-in-out infinite alternate;
+}
+
+/* Experience cards */
+
+.experience .content {
+  position: relative;
+  overflow: hidden;
+  background:
+    linear-gradient(
+      145deg,
+      rgba(13, 35, 52, 0.97),
+      rgba(7, 25, 39, 0.97)
+    );
+  border: 1px solid rgba(45, 212, 191, 0.24);
+  border-radius: 1rem;
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.36),
+    0 0 18px rgba(45, 212, 191, 0.06);
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.experience .content:hover {
+  transform: translateY(-6px);
+  border-color: rgba(45, 212, 191, 0.7);
+  box-shadow:
+    0 18px 40px rgba(0, 0, 0, 0.45),
+    0 0 24px rgba(45, 212, 191, 0.16);
+}
+
+/* Company heading */
+
+.experience .content .tag {
+  padding: 1.6rem 2rem;
+  background: linear-gradient(
+    135deg,
+    #0f766e,
+    #126b8c
+  );
+  color: #ffffff;
+}
+
+.experience .content .tag h2 {
+  color: #ffffff;
+}
+
+/* Role description */
+
+.experience .content .desc {
+  margin-left: 0;
+  padding: 1.8rem 2rem 2rem;
+  background: transparent;
+  color: #d8e5ed;
+}
+
+.experience .content .desc h3 {
+  color: #f3f8fb;
+}
+
+.experience .content .desc p {
+  color: #a9bdca;
+}
+
+.experience .content .desc ul {
+  color: #d8e5ed;
+}
+
+.experience .content .desc li {
+  line-height: 1.65;
+}
+
+.experience .content .desc li::marker {
+  color: #2dd4bf;
+}
+
+/* Timeline arrows */
+
+.experience .left::before {
+  border-color:
+    transparent
+    transparent
+    transparent
+    #0f766e;
+}
+
+.experience .right::before {
+  border-color:
+    transparent
+    #0f766e
+    transparent
+    transparent;
+}
+
+/* ===== FUN ELEMENT: CODE SCAN LINE ===== */
+
+.experience .content::after {
+  position: absolute;
+  top: 0;
+  left: -45%;
+  width: 32%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(92, 245, 225, 0.04),
+    rgba(92, 245, 225, 0.2),
+    rgba(92, 245, 225, 0.04),
+    transparent
+  );
+  content: "";
+  pointer-events: none;
+  transform: skewX(-12deg);
+  animation: experienceCodeScan 5.5s ease-in-out infinite;
+}
+
+/* Different starting times for alternating cards */
+
+.experience .container:nth-child(2n) .content::after {
+  animation-delay: -2.4s;
+}
+
+.experience .container:nth-child(3n) .content::after {
+  animation-delay: -4s;
+}
+
+/* Animations */
+
+@keyframes experienceNodeGlow {
+  from {
+    box-shadow:
+      0 0 0 3px rgba(45, 212, 191, 0.08),
+      0 0 10px rgba(45, 212, 191, 0.26);
+  }
+
+  to {
+    box-shadow:
+      0 0 0 7px rgba(45, 212, 191, 0.14),
+      0 0 20px rgba(45, 212, 191, 0.55);
+  }
+}
+
+@keyframes experienceCodeScan {
+  0%,
+  20% {
+    left: -45%;
+    opacity: 0;
+  }
+
+  30% {
+    opacity: 1;
+  }
+
+  70% {
+    opacity: 1;
+  }
+
+  80%,
+  100% {
+    left: 120%;
+    opacity: 0;
+  }
+}
+
+/* Mobile */
+
+@media screen and (max-width: 600px) {
+  .experience .left::before,
+  .experience .right::before {
+    border-color:
+      transparent
+      #0f766e
+      transparent
+      transparent;
+  }
+
+  .experience .content::after {
+    animation-duration: 6.5s;
+  }
+}
+/* ===== EXPERIENCE BACK BUTTON ===== */
+
+.backbtn .btn,
+.morebtn .btn,
+.back-button a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  padding: 1.3rem 2.4rem;
+  background: linear-gradient(
+    135deg,
+    #0f9d8a,
+    #087c6d
+  ) !important;
+  border: 1px solid rgba(45, 212, 191, 0.45);
+  border-radius: 0.7rem;
+  color: #ffffff !important;
+  box-shadow:
+    0 7px 18px rgba(15, 157, 138, 0.3),
+    0 0 14px rgba(45, 212, 191, 0.12);
+  font-size: 1.6rem;
+  font-weight: 600;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    background 0.3s ease;
+}
+
+.backbtn .btn:hover,
+.morebtn .btn:hover,
+.back-button a:hover {
+  background: linear-gradient(
+    135deg,
+    #22c5ad,
+    #0a7468
+  ) !important;
+  transform: translateY(-3px);
+  box-shadow:
+    0 10px 24px rgba(15, 157, 138, 0.4),
+    0 0 20px rgba(45, 212, 191, 0.2);
+}
+/* ===== ACTIVE EXPERIENCE TRACKER ===== */
+
+.experience .timeline-tracker-dot {
+  position: absolute;
+  top: 2rem;
+  left: 50%;
+  z-index: 5;
+  width: 1.7rem;
+  height: 1.7rem;
+  background: #ffffff;
+  border: 3px solid #2dd4bf;
+  border-radius: 50%;
+  box-shadow:
+    0 0 7px #2dd4bf,
+    0 0 16px rgba(45, 212, 191, 0.9),
+    0 0 28px rgba(45, 212, 191, 0.5);
+  pointer-events: none;
+  transform: translateX(-50%);
+  transition:
+    top 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.3s ease;
+}
+
+/* Highlight whichever experience is active */
+
+.experience .container.active-experience .content {
+  border-color: rgba(45, 212, 191, 0.85);
+  box-shadow:
+    0 18px 40px rgba(0, 0, 0, 0.45),
+    0 0 28px rgba(45, 212, 191, 0.2);
+}
+
+.experience .container.active-experience::after {
+  border-color: #75f5e4;
+  box-shadow:
+    0 0 0 7px rgba(45, 212, 191, 0.16),
+    0 0 22px rgba(45, 212, 191, 0.75);
+}
+
+@media screen and (max-width: 600px) {
+  .experience .timeline-tracker-dot {
+    left: 31px;
+  }
+}
+
+/* Footer social icons */
+
+.footer .box-container .box .share a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 4rem;
+  height: 4rem;
+  padding: 0;
+  background: #e6e6e6;
+  border: 1px solid transparent;
+  border-radius: 50%;
+  color: #0f766e;
+}
+
+.footer .box-container .box .share a i {
+  display: block;
+  color: inherit;
+  font-size: 1.8rem;
+  line-height: 1;
+}
+
+.footer .box-container .box .share a:hover {
+  background: #0f9d8a;
+  border-color: #2dd4bf;
+  color: #ffffff;
+  transform: translateY(-3px);
+}
+
+.footer .share a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 4rem;
+  height: 4rem;
+  padding: 0;
+  color: #0f766e;
+}
+
+.footer .share a i {
+  display: block;
+  color: inherit;
+  font-family: "Font Awesome 5 Brands";
+  font-size: 1.8rem;
+  line-height: 1;
+}
+
+.footer .share a:last-child i {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+}
+.footer .share a i {
+  color: #000000 !important;
+}
+
+.footer .share a:hover i {
+  color: #000000 !important;
+}
+
+/* ===== CONSISTENT SCROLL-TO-TOP BUTTON ===== */
+
+#scroll-top {
   position: fixed;
-  top: -140%;
   right: 2rem;
-  padding: 1rem 1.5rem;
-  font-size: 2rem;
-  background: #ffae00;
-  color: rgb(13, 0, 44);
-  border-radius: 5rem;
-  transition: 1s linear;
+  bottom: -8rem;
   z-index: 1000;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 4.8rem;
+  height: 4.8rem;
+  padding: 0;
+
+  background: #168be3;
+  border: 2px solid #60baff;
+  border-radius: 50%;
+
+  box-shadow:
+    0 7px 18px rgba(22, 139, 227, 0.35),
+    0 0 14px rgba(22, 139, 227, 0.18);
+
+  opacity: 0;
+
+  transition:
+    bottom 0.4s ease,
+    opacity 0.4s ease,
+    background 0.3s ease,
+    transform 0.3s ease;
 }
-#scroll-top.active{
-  top: calc(100% - 12rem);
+
+#scroll-top.active {
+  bottom: 2rem;
+  opacity: 1;
 }
-/* scroll top ends */
+
+#scroll-top:hover {
+  background: #0876c9;
+  transform: translateY(-4px);
+}
+
+/* White upward chevron */
+
+.scroll-chevron {
+  position: relative;
+  width: 2rem;
+  height: 1.2rem;
+}
+
+.scroll-chevron::before,
+.scroll-chevron::after {
+  position: absolute;
+  top: 0.4rem;
+
+  width: 1.35rem;
+  height: 0.4rem;
+
+  background: #ffffff;
+  border-radius: 1rem;
+
+  content: "";
+}
+
+.scroll-chevron::before {
+  left: 0;
+  transform: rotate(-45deg);
+}
+
+.scroll-chevron::after {
+  right: 0;
+  transform: rotate(45deg);
+}
