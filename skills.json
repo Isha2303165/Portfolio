@@ -77,7 +77,7 @@
   },
   {
     "name": "DynamoDB",
-    "icon": "https://cdn.simpleicons.org/amazondynamodb"
+    "icon": "./assets/images/skills/dynamodb.png"
   },
   {
     "name": "GitHub Actions",
@@ -88,6 +88,10 @@
     "icon": "https://img.icons8.com/color/48/oracle-logo.png"
   },
   {
+    "name": "AWS Lambda",
+    "icon": "https://img.icons8.com/color/48/amazon-web-services.png"
+  },
+  {
     "name": "FAISS",
     "icon": "https://img.icons8.com/color/48/database.png"
   },
@@ -95,18 +99,7 @@
     "name": "AWS",
     "icon": "https://img.icons8.com/color/48/amazon-web-services.png"
   },
-  {
-    "name": "AWS EC2",
-    "icon": "https://img.icons8.com/color/48/amazon-web-services.png"
-  },
-  {
-    "name": "AWS S3",
-    "icon": "https://img.icons8.com/color/48/amazon-web-services.png"
-  },
-  {
-    "name": "AWS Lambda",
-    "icon": "https://img.icons8.com/color/48/amazon-web-services.png"
-  },
+  
   {
     "name": "Docker",
     "icon": "https://img.icons8.com/color/48/docker.png"
@@ -116,8 +109,16 @@
     "icon": "https://img.icons8.com/color/48/kubernetes.png"
   },
   {
+    "name": "AWS EC2",
+    "icon": "https://img.icons8.com/color/48/amazon-web-services.png"
+  },
+  {
     "name": "CI/CD",
     "icon": "https://cdn.simpleicons.org/githubactions/ffffff"
+  },
+   {
+    "name": "AWS S3",
+    "icon": "https://img.icons8.com/color/48/amazon-web-services.png"
   },
   {
     "name": "LangChain",

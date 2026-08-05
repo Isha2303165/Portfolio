@@ -1012,3 +1012,26 @@ html {
   right: 0;
   transform: rotate(45deg);
 }
+/* Keep every skill card and icon the same size */
+
+.skills .container .bar {
+  min-width: 0;
+  overflow: hidden;
+}
+
+.skills .container .bar .info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.skills .container .bar .info img {
+  width: 6rem !important;
+  height: 6rem !important;
+  max-width: 6rem !important;
+  max-height: 6rem !important;
+  object-fit: contain;
+}
